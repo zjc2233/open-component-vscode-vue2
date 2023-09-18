@@ -15,6 +15,6 @@
   "dependencies": {
     "@babel/parser": "^7.22.16",
     "@babel/traverse": "^7.22.20",
-    "loader-utils": "^3.2.1"
+    "loader-utils": "^2.0.4"
   }
 }

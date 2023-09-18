@@ -1,23 +1,47 @@
 # openComponent-vscode-vue2
-
 #### 介绍
 vue2项目通过vscode打开对应的组件文件，快速定位组件文件
 
-#### 软件架构
-软件架构说明
-
 
 #### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```
+npm install -D openComponent-vscode-vue2
+```
 
 #### 使用说明
+1.  在vue.config.js中配置openComponent-vscode-vue2的loader
+```
+// vue.config.js
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+module.exports = {
+  chainWebpack(config) {
+    config
+      .when(process.env.NODE_ENV === 'development', config => {
+        config.module
+          .rule('open-vscode')
+          .test(/\.vue$/)
+          .use('open-vscode')
+          .loader('open-component-vscode-vue2/index.js')
+          .options({
+            // 设置键盘按住 shift 按键，同时鼠标单击页面，实现打开vscode对应的组件文件
+            keyWord: 'shift',
+          })
+          config.module
+            .rule('open-vscode-initfn')
+            .test(/\.js$/)
+            .use('open-vscode-initfn')
+            .loader('open-component-vscode-vue2/open-vscode-initfn.js')
+            .options({
+              // 自定义匹配规则
+              resourceQuery: /src\/main\.js/,
+              bindOpenVscodeFile: 'main.js',
+            })
+            .end()
+      },
+      )
+  }
+}
+```
 
 #### 参与贡献
 
@@ -26,12 +50,3 @@ vue2项目通过vscode打开对应的组件文件，快速定位组件文件
 3.  提交代码
 4.  新建 Pull Request
 
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
