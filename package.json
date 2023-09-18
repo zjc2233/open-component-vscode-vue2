@@ -1,8 +1,9 @@
 {
   "name": "open-component-vscode-vue2",
   "version": "1.0.0",
-  "description": "open-component-vscode-vue2",
+  "description": "vue2项目通过界面点击打开vscode中对应组件文件（webpack）",
   "main": "index.js",
+  "private": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,11 +11,12 @@
     "type": "git",
     "url": "https://gitee.com/zhao_juchang/open-component-vscode-vue2.git"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@babel/parser": "^7.22.16",
     "@babel/traverse": "^7.22.20",
     "loader-utils": "^2.0.4"
-  }
+  },
+  "keywords": [],
+  "author": "zhaojuchang",
+  "license": "ISC"
 }
