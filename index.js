@@ -7,7 +7,8 @@ module.exports = function (source) {
   }
   // return source
   const loaderContext = this;
-  const resourcePath = loaderContext.resourcePath;
+  let resourcePath = loaderContext.resourcePath;
+  resourcePath = resourcePath.replace(/\\/g,'/')
 
   // 获取option 参数
   const options = getOptions(loaderContext) || loaderContext.getOptions();
