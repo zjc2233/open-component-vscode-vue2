@@ -1,6 +1,6 @@
 {
   "name": "open-component-vscode-vue2",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "vue2项目通过界面点击打开vscode中对应组件文件（webpack）",
   "main": "index.js",
   "private": false,
